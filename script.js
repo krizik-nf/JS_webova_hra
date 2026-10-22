@@ -1,4 +1,4 @@
-let plemena = ["Ragdoll", "Norská lesní kočka", "Bobcat", "Tilcayo"];
+let plemena = ["Ragdoll","Ragdoll","Norská lesní kočka", "Norská lesní kočka", "Bobcat","Bobcat","Tilcayo", "Tilcayo"];
 // ragdoll - druha nejvetsi rasa kocek domacich
 // norska lesni kocka - prirodne adaptovana na chladne podminky
 // bobcat/lynx - ma kratky ocas
@@ -15,7 +15,7 @@ for(let i = 0; i<8; i++)
     const karta = document.createElement("button");
     karta.innerText = "?";
     karta.addEventListener("click", event=>{
-
+        karta.innerText = plemena[i];
     })
 
     board.appendChild(karta);
