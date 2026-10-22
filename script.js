@@ -18,10 +18,29 @@ for(let i = 0; i<8; i++)
     const karta = document.createElement("button");
     karta.innerText = "?";
 
+
     let kocka = plemena[i];
 
     karta.addEventListener("click", event=>{
+
         karta.innerText = kocka;
+        kolo++;
+
+        if(kolo === 1)
+        {
+            prvni_karta = karta;
+        }
+
+        //nefunguje!!!
+        if(kolo === 2)
+        {
+            druha_karta = karta;
+        }
+
+        if(prvni_karta === druha_karta)
+        {
+            console.log("test");
+        }
 
     })
 
