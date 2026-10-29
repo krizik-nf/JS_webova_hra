@@ -11,9 +11,7 @@ const text_kocka = document.getElementById("text_kocka");
 let kolo = 0;
 let prvni_karta;
 let druha_karta;
-
-let fotka1;
-let fotka2;
+let nalezene_pary = 0;
 
 //w3 schools - sorting an array in random order
 plemena.sort(function () {
@@ -50,6 +48,12 @@ for (let i = 0; i < 8; i++) {
         if (prvni_karta.innerText === druha_karta.innerText) {
           console.log("test");
           kolo = 0;
+          
+          nalezene_pary++;
+          if(nalezene_pary == 4)
+            {
+              alert("konec hry!");
+            }
 
           if (prvni_karta.innerText === "Ragdoll") {
             text_kocka.innerText = "Ragdoll je druhá největší rasa koček domácích.";
@@ -67,6 +71,6 @@ for (let i = 0; i < 8; i++) {
       }
     }
   });
-
+ 
   board.appendChild(karta);
 }
