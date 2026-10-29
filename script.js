@@ -1,4 +1,5 @@
 let plemena = ["Ragdoll","Ragdoll","Norská lesní kočka", "Norská lesní kočka", "Bobcat","Bobcat","Tilcayo", "Tilcayo"];
+
 // ragdoll - druha nejvetsi rasa kocek domacich
 // norska lesni kocka - prirodne adaptovana na chladne podminky
 // bobcat/lynx - ma kratky ocas
@@ -11,49 +12,53 @@ let prvni_karta;
 let druha_karta;
 
 //w3 schools - sorting an array in random order
-plemena.sort(function (){return 0.5 - Math.random()});
+plemena.sort(function () {
+  return 0.5 - Math.random();
+});
 
-for(let i = 0; i<8; i++)
-{
-    const karta = document.createElement("button");
-    karta.innerText = "?";
+for (let i = 0; i < 8; i++) {
+  const karta = document.createElement("button");
+  karta.innerText = "?";
 
+  let kocka = plemena[i];
 
-    let kocka = plemena[i];
+  karta.addEventListener("click", (event) => {
+    if (karta.innerText === "?") //jen zakryty kartky
+    {
+      if (kolo === 2) // kdyz minule byl spatny par tak se zakryjou
+      {
+        prvni_karta.innerText = "?";
+        druha_karta.innerText = "?";
+        kolo = 0;
+      }
+      karta.innerText = kocka;
+      kolo++;
 
-    karta.addEventListener("click", event=>{
+      if (kolo === 1) {
+        prvni_karta = karta;
+      } else if (kolo === 2) {
+        druha_karta = karta;
 
-        if(karta.innerText === "?") //jen zakryty kartky
-        {
+        if (prvni_karta.innerText === druha_karta.innerText) {
+          console.log("test");
+          kolo = 0;
 
-            if(kolo === 2) // kdyz minule byl spatny par tak se zakryjou
-            {
-                prvni_karta.innerText = "?";
-                druha_karta.innerText = "?";
-                kolo = 0;
-            }
-                    karta.innerText = kocka;
-                    kolo++;
-
-                    if(kolo === 1)
-                    {
-                        prvni_karta = karta;
-                    }else if(kolo === 2)
-                    {
-                        druha_karta = karta;
-
-                        if(prvni_karta.innerText === druha_karta.innerText)
-                    {
-                        console.log("test");
-                        kolo = 0;
-                    }
-                    }
-
-                    
-
+          if (prvni_karta.innerText === "Ragdoll") {
+            console.log("radgoll info");
+          }
+          if (prvni_karta.innerText === "Norská lesní kočka") {
+            console.log("kocka info");
+          }
+          if (prvni_karta.innerText === "Bobcat") {
+            console.log("kocka info");
+          }
+          if (prvni_karta.innerText === "Tilcayo") {
+            console.log("kocka info");
+          }
         }
-       
-    })
+      }
+    }
+  });
 
-    board.appendChild(karta);
+  board.appendChild(karta);
 }
