@@ -23,25 +23,29 @@ for(let i = 0; i<8; i++)
 
     karta.addEventListener("click", event=>{
 
-        karta.innerText = kocka;
-        kolo++;
-
-        if(kolo === 1)
+        if(karta.innerText === "?") //jen zakryty kartky
         {
-            prvni_karta = karta;
-        }
+                    karta.innerText = kocka;
+                    kolo++;
 
-        //nefunguje!!!
-        if(kolo === 2)
-        {
-            druha_karta = karta;
-        }
+                    if(kolo === 1)
+                    {
+                        prvni_karta = karta;
+                    }else if(kolo === 2)
+                    {
+                        druha_karta = karta;
 
-        if(prvni_karta === druha_karta)
-        {
-            console.log("test");
-        }
+                        if(prvni_karta.innerText === druha_karta.innerText)
+                    {
+                        console.log("test");
+                        kolo = 0;
+                    }
+                    }
 
+                    
+
+        }
+       
     })
 
     board.appendChild(karta);
