@@ -1,9 +1,9 @@
 let plemena = ["Ragdoll","Ragdoll","Norská lesní kočka", "Norská lesní kočka", "Bobcat","Bobcat","Tilcayo", "Tilcayo"];
 
-// ragdoll - druha nejvetsi rasa kocek domacich
-// norska lesni kocka - prirodne adaptovana na chladne podminky
-// bobcat/lynx - ma kratky ocas
-// tilcayo - nove objeveny druh v roce 2026
+// ragdoll - druha nejvetsi rasa kocek domacich https://cs.wikipedia.org/wiki/Ragdoll
+// norska lesni kocka - prirodne adaptovana na chladne podminky https://cs.wikipedia.org/wiki/Norsk%C3%A1_lesn%C3%AD_ko%C4%8Dka
+// bobcat/lynx - ma kratky ocas https://en.wikipedia.org/wiki/Bobcat
+// tilcayo - nove objeveny druh v roce 2026 https://en.wikipedia.org/wiki/Tilcayo
 
 const board = document.getElementById("pexeso");
 const text_kocka = document.getElementById("text_kocka");
@@ -11,6 +11,9 @@ const text_kocka = document.getElementById("text_kocka");
 let kolo = 0;
 let prvni_karta;
 let druha_karta;
+
+let fotka1;
+let fotka2;
 
 //w3 schools - sorting an array in random order
 plemena.sort(function () {
@@ -32,8 +35,11 @@ for (let i = 0; i < 8; i++) {
         druha_karta.innerText = "?";
         kolo = 0;
       }
-      
+
       karta.innerText = kocka;
+      const fotkakocka = document.createElement("img");
+      fotkakocka.src = "kocky/" + kocka + ".png"; //
+      karta.appendChild(fotkakocka);
       kolo++;
 
       if (kolo === 1) {
