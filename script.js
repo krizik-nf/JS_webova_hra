@@ -32,6 +32,7 @@ for (let i = 0; i < 8; i++) {
         druha_karta.innerText = "?";
         kolo = 0;
       }
+      
       karta.innerText = kocka;
       kolo++;
 
