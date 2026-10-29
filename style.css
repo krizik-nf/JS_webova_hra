@@ -2,6 +2,7 @@ body{
     background-color: #FFF4E6;
     text-align: center;
     color: #A35A00;
+    font-family: Arial;
 
 }
 
@@ -15,10 +16,11 @@ body{
 
 #pexeso button{
     height: 300px;
-    font-size: 40px;
+    font-size: 30px;
     background-color: #FFE4C4;
     border: none;
     color: #A35A00;
+    overflow: hidden;
 }
 
 #pexeso button:hover{

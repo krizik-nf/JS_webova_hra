@@ -52,16 +52,16 @@ for (let i = 0; i < 8; i++) {
           kolo = 0;
 
           if (prvni_karta.innerText === "Ragdoll") {
-            text_kocka.innerText = "Ragdoll je druha nejvetsi rasa kocek domacich";
+            text_kocka.innerText = "Ragdoll je druhá největší rasa koček domácích.";
           }
           if (prvni_karta.innerText === "Norská lesní kočka") {
-            text_kocka.innerText = "Norská lesní kočka je prirodne adaptovana na chladne podminky";
+            text_kocka.innerText = "Norská lesní kočka je přírodně adaptovaná na chladné podmínky.";
           }
           if (prvni_karta.innerText === "Bobcat") {
-            text_kocka.innerText = "Bobcat ma kratky ocas";
+            text_kocka.innerText = "Bobcat má krátký ocas.";
           }
           if (prvni_karta.innerText === "Tilcayo") {
-            text_kocka.innerText = "Tilcayo je nove objeveny druh v roce 2026";
+            text_kocka.innerText = "Tilcayo je nově objevený druh v roce 2026.";
           }
         }
       }
