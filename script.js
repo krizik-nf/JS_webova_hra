@@ -25,6 +25,13 @@ for(let i = 0; i<8; i++)
 
         if(karta.innerText === "?") //jen zakryty kartky
         {
+
+            if(kolo === 2) // kdyz minule byl spatny par tak se zakryjou
+            {
+                prvni_karta.innerText = "?";
+                druha_karta.innerText = "?";
+                kolo = 0;
+            }
                     karta.innerText = kocka;
                     kolo++;
 
