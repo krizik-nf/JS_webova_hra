@@ -6,6 +6,7 @@ let plemena = ["Ragdoll","Ragdoll","Norská lesní kočka", "Norská lesní koč
 // tilcayo - nove objeveny druh v roce 2026
 
 const board = document.getElementById("pexeso");
+const text_kocka = document.getElementById("text_kocka");
 
 let kolo = 0;
 let prvni_karta;
@@ -44,16 +45,16 @@ for (let i = 0; i < 8; i++) {
           kolo = 0;
 
           if (prvni_karta.innerText === "Ragdoll") {
-            console.log("radgoll info");
+            text_kocka.innerText = "Ragdoll je druha nejvetsi rasa kocek domacich";
           }
           if (prvni_karta.innerText === "Norská lesní kočka") {
-            console.log("kocka info");
+            text_kocka.innerText = "Norská lesní kočka je prirodne adaptovana na chladne podminky";
           }
           if (prvni_karta.innerText === "Bobcat") {
-            console.log("kocka info");
+            text_kocka.innerText = "Bobcat ma kratky ocas";
           }
           if (prvni_karta.innerText === "Tilcayo") {
-            console.log("kocka info");
+            text_kocka.innerText = "Tilcayo je nove objeveny druh v roce 2026";
           }
         }
       }
