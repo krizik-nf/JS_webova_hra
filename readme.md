@@ -1,3 +1,23 @@
-# cscs
-Pexeso s obrázky koček
-Po nalezení správného páru se zobrazí informace o daném plemenu, např. nějaká zajímavost.
+<p align="center">
+<img src="logo.png">
+</p>
+
+<div align="center">
+  <a href="#popis-projektu">popis projektu</a> •
+  <a href="#ovládání-hry">ovládání hry</a> •
+  <a href="#poznámky">poznámky</a>
+</div>
+
+# popis projektu
+- Webová hra
+- Kočky
+- HTML, CSS, JavaScript
+
+# ovládání hry
+- Otačí se kartičky
+
+# ukázka hry
+<img src="ukazka_hry.png">
+
+# poznámky
+- Projekt je školní práce
