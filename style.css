@@ -2,7 +2,7 @@ body{
     background-color: #FFF4E6;
     text-align: center;
     color: #A35A00;
-    font-family: Arial;
+    font-family: Helvetica, serif;
 
 }
 
@@ -21,6 +21,7 @@ body{
     border: none;
     color: #A35A00;
     overflow: hidden;
+    border-radius:  5px;
 }
 
 #pexeso button:hover{
@@ -30,3 +31,13 @@ body{
 #text_kocka{
     font-size: 40px;
 }
+
+button{
+    font-size: 15px;
+    background-color: #FFE4C4;
+    margin: 5px;
+    border-radius:  5px;
+    border: none;
+    color: #A35A00;
+}
+

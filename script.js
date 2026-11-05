@@ -7,11 +7,17 @@ let plemena = ["Ragdoll","Ragdoll","Norská lesní kočka", "Norská lesní koč
 
 const board = document.getElementById("pexeso");
 const text_kocka = document.getElementById("text_kocka");
+const skore = document.getElementById("skore");
 
 let kolo = 0;
 let prvni_karta;
 let druha_karta;
 let nalezene_pary = 0;
+
+function refreshPage()
+{
+  location.reload();
+}
 
 //w3 schools - sorting an array in random order
 plemena.sort(function () {
@@ -50,9 +56,16 @@ for (let i = 0; i < 8; i++) {
           kolo = 0;
           
           nalezene_pary++;
+          skore.innerText = "Skore: " + nalezene_pary + "/4";
           if(nalezene_pary == 4)
             {
               alert("konec hry!");
+              const reset_tlacitko = document.createElement("button");
+              reset_tlacitko.innerText = "Restartovat hru";
+              skore.appendChild(reset_tlacitko);
+
+              reset_tlacitko.onclick = refreshPage;
+
             }
 
           if (prvni_karta.innerText === "Ragdoll") {
@@ -73,4 +86,6 @@ for (let i = 0; i < 8; i++) {
   });
  
   board.appendChild(karta);
+
+
 }
