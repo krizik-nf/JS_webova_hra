@@ -1,4 +1,4 @@
-let plemena = ["Ragdoll","Ragdoll","Norská lesní kočka", "Norská lesní kočka", "Bobcat","Bobcat","Tilcayo", "Tilcayo"];
+let plemena = ["Ragdoll","Ragdoll","Norska", "Norska", "Bobcat","Bobcat","Tilcayo", "Tilcayo"];
 
 // ragdoll - druha nejvetsi rasa kocek domacich https://cs.wikipedia.org/wiki/Ragdoll
 // norska lesni kocka - prirodne adaptovana na chladne podminky https://cs.wikipedia.org/wiki/Norsk%C3%A1_lesn%C3%AD_ko%C4%8Dka
@@ -40,7 +40,14 @@ for (let i = 0; i < 8; i++) {
         kolo = 0;
       }
 
-      karta.innerText = kocka;
+      if(kocka === "Norska")
+      {
+        karta.innerText = "Norská lesní kočka";
+      }else
+      {
+        karta.innerText = kocka;
+      }
+
       const fotkakocka = document.createElement("img");
       fotkakocka.src = "kocky/" + kocka + ".png"; //
       karta.appendChild(fotkakocka);
