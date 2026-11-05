@@ -57,7 +57,7 @@ for (let i = 0; i < 8; i++) {
           
           nalezene_pary++;
           skore.innerText = "Skore: " + nalezene_pary + "/4";
-          if(nalezene_pary == 4)
+          if(nalezene_pary === 4)
             {
               alert("konec hry!");
               const reset_tlacitko = document.createElement("button");
