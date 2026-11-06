@@ -14,12 +14,12 @@ let prvni_karta;
 let druha_karta;
 let nalezene_pary = 0;
 
-function refreshPage()
-{
+function refreshPage() {
   location.reload();
 }
 
-//w3 schools - sorting an array in random order
+// w3 schools - sorting an array in random order
+// zamicha pole
 plemena.sort(function () {
   return 0.5 - Math.random();
 });
@@ -31,55 +31,57 @@ for (let i = 0; i < 8; i++) {
   let kocka = plemena[i];
 
   karta.addEventListener("click", (event) => {
-    if (karta.innerText === "?") //jen zakryty kartky
+    if (karta.innerText === "?") //jen zakryty karty
     {
-      if (kolo === 2) // kdyz minule byl spatny par tak se zakryjou
+      if (kolo === 2) // kdyz jsou odkryty dve karty, ktery se neshodovali, schovame je a dame novy kolo
       {
         prvni_karta.innerText = "?";
         druha_karta.innerText = "?";
         kolo = 0;
       }
 
-      if(kocka === "Norska")
-      {
+      if (kocka === "Norska") { // odkryti karty, Norska kvuli hostingu
         karta.innerText = "Norská lesní kočka";
-      }else
-      {
+      } else {
         karta.innerText = kocka;
       }
 
+      // vytvori obrazek karty
       const fotkakocka = document.createElement("img");
-      fotkakocka.src = "kocky/" + kocka + ".png"; //
+      fotkakocka.src = "kocky/" + kocka + ".png";
       karta.appendChild(fotkakocka);
-      kolo++;
+
+      kolo++; 
 
       if (kolo === 1) {
-        prvni_karta = karta;
+        prvni_karta = karta; //prvni odkryta karta
       } else if (kolo === 2) {
-        druha_karta = karta;
+        druha_karta = karta; // odkryta druha karta a porovname
 
-        if (prvni_karta.innerText === druha_karta.innerText) {
-          console.log("test");
+        if (prvni_karta.innerText === druha_karta.innerText) { //kdyz je stejny par
           kolo = 0;
-          
+
           nalezene_pary++;
-          skore.innerText = "Skore: " + nalezene_pary + "/4";
-          if(nalezene_pary === 4)
-            {
-              alert("konec hry!");
-              const reset_tlacitko = document.createElement("button");
-              reset_tlacitko.innerText = "Restartovat hru";
-              skore.appendChild(reset_tlacitko);
 
-              reset_tlacitko.onclick = refreshPage;
+          skore.innerText = "Skóre: " + nalezene_pary + "/4";
 
-            }
+          if (nalezene_pary === 4) { // win
+            const reset_tlacitko = document.createElement("button");
+            reset_tlacitko.innerText = "Restartovat hru";
+            skore.appendChild(reset_tlacitko);
+
+            alert("Konec hry!");
+
+            reset_tlacitko.onclick = refreshPage;
+          }
 
           if (prvni_karta.innerText === "Ragdoll") {
-            text_kocka.innerText = "Ragdoll je druhá největší rasa koček domácích.";
+            text_kocka.innerText =
+              "Ragdoll je druhá největší rasa koček domácích.";
           }
           if (prvni_karta.innerText === "Norská lesní kočka") {
-            text_kocka.innerText = "Norská lesní kočka je přírodně adaptovaná na chladné podmínky.";
+            text_kocka.innerText =
+              "Norská lesní kočka je přírodně adaptovaná na chladné podmínky.";
           }
           if (prvni_karta.innerText === "Bobcat") {
             text_kocka.innerText = "Bobcat má krátký ocas.";
@@ -91,8 +93,6 @@ for (let i = 0; i < 8; i++) {
       }
     }
   });
- 
+
   board.appendChild(karta);
-
-
 }
